@@ -134,10 +134,13 @@ var exexuteOrder = function (cmd) {
 
 //This function parses cmdField typed by user.
 function parseCommand () {
-    var input = cmdField.value;
+    var input;
     var cmd;
     var value;
     var i;
+
+    input = cmdField.value;
+    cmdField.value = "";
 
     input = input.split(";");
 
@@ -160,7 +163,6 @@ function parseCommand () {
                     exexuteOrder(cmd);
                     k++;
                 }
-
             }
         } else {
             exexuteOrder(cmd);
