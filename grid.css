@@ -1,0 +1,57 @@
+.row:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+[class*='col-'] {
+    float: left;
+    padding: 0;
+    width: 100%;
+    margin-bottom: 0.5em;
+}
+
+/* Grid (6 columns) */
+
+@media screen and (min-width: 640px){
+    .row+.row {
+        margin-top: 0.5em;
+    }
+
+    .row:first-of-type {
+        margin-top: 0.5em;
+    }
+
+    [class*='col-']:last-of-type {
+        margin-right: 0;
+    }
+
+    .col-1-6 {
+        width: 15.833333%;
+        margin-right: 1%;
+    }
+
+    .col-2-6 {
+        width: 32.666666%;
+        margin-right: 1%;
+    }
+
+    .col-3-6 {
+        width: 49.499999%;
+        margin-right: 1%;
+    }
+
+    .col-4-6 {
+        width: 66.333332%;
+        margin-right: 1%;
+    }
+
+    .col-5-6 {
+        width: 83.166665%;
+        margin-right: 1%;
+    }
+
+    .col-6-6 {
+        width: 100%;
+    }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <title>Turtle</title>
+    <link href="style.css" rel="stylesheet">
+    <link href="grid.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+</head>
+<body>
+
+<div class="row">
+    <div class="col-4-6">
+        <canvas id="turtleCanvas" width="800" height="500" class="canvas-layout"></canvas>
+    </div>
+    <div class="col-2-6">
+        <h1>Turtle emulator</h1>
+        <h2>Last commands:</h2>
+        <p id="history" class="history"></p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4-6">
+        <div class="row">
+            <div class="col-1-6">
+                <h3>Command: </h3>
+            </div>
+            <div class="col-3-6">
+                <label for="command"></label><input id="command" type="text">
+            </div>
+            <div class="col-1-6">
+                <button id="execute" onclick="execute()">Execute</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="turtle.js"></script>
+
+</body>
+</html>
