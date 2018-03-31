@@ -91,6 +91,20 @@ var pd = function () {
     isPenUp = false;
 };
 
+var koch = function (level, length) {
+    if (level < 1) {
+        fd (length);
+    } else {
+        koch (level - 1, length / 3.0);
+        lt (60);
+        koch (level - 1, length / 3.0);
+        rt (120);
+        koch (level - 1, length / 3.0);
+        lt (60);
+        koch (level - 1, length / 3.0);
+    }
+};
+
 
 var executeOrder = function (cmd) {
     var value;
@@ -117,6 +131,23 @@ var executeOrder = function (cmd) {
             break;
         case "pd":
             pd();
+            break;
+        case "koch":
+            var level, length;
+            level = parseInt(cmd[1]);
+            length = parseInt(cmd[2]);
+
+            if (level > 5) {
+                break;
+            }
+
+            lt (90);
+            fd (100);
+            rt (90);
+            for (var i = 0; i < 3; i++) {
+                koch (level, length);
+                rt (120);
+            }
             break;
         default:
             break;
