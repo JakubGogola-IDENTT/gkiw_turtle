@@ -140,11 +140,13 @@ var executeOrder = function (cmd) {
             if (level > 5) {
                 break;
             }
+
             pu();
             lt (90);
             fd (100);
             rt (90);
             pd();
+
             for (var i = 0; i < 3; i++) {
                 koch (level, length);
                 rt (120);
@@ -164,6 +166,7 @@ function parseCommand () {
     var i;
 
     input = cmdField.value;
+    document.getElementById("history").innerHTML += input + "<br />";
     cmdField.value = "";
 
     input = input.split(";");
