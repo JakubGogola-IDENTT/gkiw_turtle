@@ -38,7 +38,7 @@ var checkCoordinates = function (x, y) {
 
 //Comands of turtle
 var fd = function (value) {
-    var radians = angle *  Math.PI / 180;
+    var radians = angle *  Math.PI / 180.0;
     var dx = value * Math.sin(radians);
     var dy = value * Math.cos(radians);
 
@@ -60,7 +60,7 @@ var fd = function (value) {
 };
 
 var bk = function (value) {
-    var radians = angle *  Math.PI / 180;
+    var radians = angle *  Math.PI / 180.0;
     var dx = value * Math.sin(radians);
     var dy = value * Math.cos(radians);
 
@@ -83,14 +83,6 @@ var rt = function (value) {
     angle = (angle + value) % 360;
 };
 
-var arc = function (angle, radius) {
-    
-};
-
-var arc2 = function (angle, radius) {
-
-};
-
 var pu = function () {
     isPenUp = true;
 };
@@ -100,7 +92,7 @@ var pd = function () {
 };
 
 
-var exexuteOrder = function (cmd) {
+var executeOrder = function (cmd) {
     var value;
 
     switch (cmd[0]) {
@@ -160,22 +152,20 @@ function parseCommand () {
                 while (cmd[0] !== "end") {
                     cmd = input[k];
                     cmd = cmd.split(" ");
-                    exexuteOrder(cmd);
+                    executeOrder(cmd);
                     k++;
                 }
             }
         } else {
-            exexuteOrder(cmd);
+            executeOrder(cmd);
         }
     }
-
-
-
 }
 
 var execute = function () {
     parseCommand();
 };
+
 
 translateCoordinates();
 initTurtle();
