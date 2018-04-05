@@ -13,6 +13,8 @@ var posY = 0; //Current Y coordinate of turtle.
 var angle = 0; //Angle (in degrees).
 var isPenUp = false;
 
+var color = "#000000";
+
 //This function moves (0,0) to left bottom corner of Canvas.
 var translateCoordinates = function () {
     context.translate(0, 500);
@@ -54,6 +56,7 @@ var fd = function (value) {
     if (isPenUp) {
         context.moveTo(posX, posY);
     } else {
+        //context.strokeStyle = color;
         context.lineTo(posX, posY);
         context.stroke();
     }
@@ -61,11 +64,11 @@ var fd = function (value) {
 
 var bk = function (value) {
     var radians = angle *  Math.PI / 180.0;
-    var dx = value * Math.sin(radians);
-    var dy = value * Math.cos(radians);
+        var dx = value * Math.sin(radians);
+        var dy = value * Math.cos(radians);
 
-    posX += dx;
-    posY += dy;
+        posX += dx;
+        posY += dy;
 
     if (!checkCoordinates(posX, posY)) {
         posX -= dx;
@@ -83,6 +86,31 @@ var rt = function (value) {
     angle = (angle + value) % 360;
 };
 
+var sc = function (value) {
+    switch (value){
+        case "red":
+            color = "#FF0000";
+            break;
+        case "green":
+            color = "#00FF00";
+            break;
+        case "blue":
+            color = "#0000FF";
+            break;
+        case "yellow":
+            color = "#FFFF00";
+            break;
+        case "black":
+            color = "#000000";
+            break;
+        default:
+            break;
+    }
+
+    context.strokeStyle = color;
+
+};
+
 var pu = function () {
     isPenUp = true;
 };
@@ -90,6 +118,8 @@ var pu = function () {
 var pd = function () {
     isPenUp = false;
 };
+
+
 
 var koch = function (level, length) {
     if (level < 1) {
@@ -152,6 +182,9 @@ var executeOrder = function (cmd) {
                 rt (120);
             }
             break;
+        case "sc":
+            sc(cmd[1]);
+            break;
         default:
             break;
     }
@@ -204,10 +237,6 @@ var execute = function () {
 
 translateCoordinates();
 initTurtle();
-
-
-
-
 
 
 
