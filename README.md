@@ -6,11 +6,11 @@ Komendy języka: <br />
 ```bk length;``` <br />
 ```rt angle;``` <br />
 ```lt angle;``` <br />
+```sc color;``` <br />
+```ss size;``` <br />
 ```pu;``` <br />
 ```pd;``` <br />
 ```koch level length;``` <br />
-```sc color;``` <br />
-```ss size;``` <br />
 
 Loop syntax: <br />
 ```repeat numOfIterations;``` <br />
