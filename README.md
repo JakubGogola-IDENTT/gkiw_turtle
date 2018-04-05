@@ -12,6 +12,6 @@ Komendy języka: <br />
 
 Loop syntax: <br />
 ```repeat numOfIterations;``` <br />
-instrctions set <br />
+```//instrctions set``` <br />
 ```end;``` <br />
 
