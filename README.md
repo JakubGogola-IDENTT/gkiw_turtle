@@ -9,6 +9,8 @@ Komendy języka: <br />
 ```pu;``` <br />
 ```pd;``` <br />
 ```koch level length;``` <br />
+```sc color;``` <br />
+```ss size;``` <br />
 
 Loop syntax: <br />
 ```repeat numOfIterations;``` <br />
