@@ -12,26 +12,48 @@
 <div class="row">
     <div class="col-4-6">
         <canvas id="turtleCanvas" width="800" height="500" class="canvas-layout"></canvas>
+        <div class="col-4-6">
+            <div class="row">
+                <div class="col-1-6">
+                    <h3>Command: </h3>
+                </div>
+                <div class="col-4-6">
+                    <label for="command"></label><input id="command" type="text">
+
+                </div>
+                <div class="col-1-6">
+                    <button id="execute" onclick="execute()">Execute</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6-6">
+                    <h2>Examples:</h2>
+                    Pentagon: pu;fd 100;rt 90;pd;sc red;ss 2;repeat 5;fd 100;lt 72;end; <br />
+                    Hexagon: pu;fd 100;rt 90;pd;sc blue;ss 3;repeat 6;fd 100;lt 60;end; <br />
+                    Circle: pu;fd 100;pd;sc yellow;ss 4;repeat 360;fd 1;lt 1;end;
+                    </p>
+                </div>
+            </div>
+
+        </div>
     </div>
     <div class="col-2-6">
         <h1>Turtle emulator</h1>
         <h2>Last commands:</h2>
         <p id="history" class="history-field"></p>
-    </div>
-</div>
-<div class="row">
-    <div class="col-4-6">
-        <div class="row">
-            <div class="col-1-6">
-                <h3>Command: </h3>
-            </div>
-            <div class="col-3-6">
-                <label for="command"></label><input id="command" type="text">
-            </div>
-            <div class="col-1-6">
-                <button id="execute" onclick="execute()">Execute</button>
-            </div>
-        </div>
+        <h4>Commands:</h4>
+        <p>
+            fd [length] <br />
+            bk [length] <br />
+            rt [angle] <br />
+            lt [angle] <br />
+            sc [color] <br />
+            ss [size] <br />
+            pu <br />
+            pd <br />
+            koch [level] [length] <br />
+            repeat [numOfIterations] /instructions set/ end
+        </p>
     </div>
 </div>
 
